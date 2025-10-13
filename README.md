@@ -7,6 +7,9 @@ Currency Converter: With live rates (requires API)
 file:///C:/Users/Akshaya/Downloads/calcx_uiux_mockup.html
 sample:https://www.allinonecalculator.com/
 
+![Uploading image.png…]()
+
+
 
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/faa04cbe-78d2-43e7-8a02-a0b0c9bb51b3" />
