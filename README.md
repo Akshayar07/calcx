@@ -5,6 +5,7 @@ Percentage Calculator: General purpose
 Currency Converter: With live rates (requires API)
 
 file:///C:/Users/Akshaya/Downloads/calcx_uiux_mockup.html
+sample:https://www.allinonecalculator.com/
 
 
 
