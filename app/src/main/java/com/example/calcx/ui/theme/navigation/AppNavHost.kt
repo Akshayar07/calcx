@@ -29,7 +29,7 @@ object Routes {
 fun AppNavHost(navController: NavHostController) {
     val ageViewModel: AgeViewModel = viewModel()
     val bmiViewModel: BmiViewModel = viewModel()
-    NavHost(navController = navController, startDestination = Routes.BMI) {
+    NavHost(navController = navController, startDestination = Routes.LANDING) {
         composable(Routes.LANDING) { LandingScreen(navController) }
         composable(Routes.AGE) { AgeCalculatorScreen(navController, ageViewModel) }
         composable(Routes.AGE_RESULT) { AgeResultScreen(navController, ageViewModel) }
