@@ -34,7 +34,7 @@ fun AppNavHost(navController: NavHostController) {
         composable(Routes.AGE) { AgeCalculatorScreen(navController, ageViewModel) }
         composable(Routes.AGE_RESULT) { AgeResultScreen(navController, ageViewModel) }
         composable(Routes.BMI) { BmiCalculationScreen(navController, bmiViewModel) }
-        composable(Routes.BMI_RESULT) { BmiResultScreen(bmiViewModel) }
+        composable(Routes.BMI_RESULT) { BmiResultScreen(navController, bmiViewModel) }
 
     }
 }

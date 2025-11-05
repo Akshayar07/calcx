@@ -31,8 +31,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -42,18 +40,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import com.example.calcx.ui.theme.components.SectionTitle
 import com.example.calcx.viewmodel.BmiViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun BmiResultScreen(bmiViewModel: BmiViewModel = viewModel()) {
-    var weight: String by bmiViewModel.weight
-    var height: String by bmiViewModel.height
-    var age: String by bmiViewModel.age
-    var bmi: Double by bmiViewModel.bmi
-    var category: String by bmiViewModel.category
-    var healthTip: String by bmiViewModel.healthTip
+fun BmiResultScreen(navController: NavHostController, bmiViewModel: BmiViewModel = viewModel()) {
+
     Scaffold { innerPadding ->
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -69,7 +63,7 @@ fun BmiResultScreen(bmiViewModel: BmiViewModel = viewModel()) {
             ) {
                 Text(
                     modifier = Modifier.padding(top = 16.dp),
-                    text = bmi.toString(),
+                    text = bmiViewModel.bmi.toString(),
                     style = TextStyle(
                         fontSize = 50.sp,
                         fontWeight = FontWeight.Bold,
@@ -95,7 +89,9 @@ fun BmiResultScreen(bmiViewModel: BmiViewModel = viewModel()) {
                 )
             ) {
                 Text(
-                    modifier = Modifier.padding(16.dp), text = category, style = TextStyle(
+                    modifier = Modifier.padding(16.dp),
+                    text = bmiViewModel.category,
+                    style = TextStyle(
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
                     )
@@ -105,29 +101,37 @@ fun BmiResultScreen(bmiViewModel: BmiViewModel = viewModel()) {
                 modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 InfoSection(
-                    iconColor = Color.Blue, icon = Icons.Default.Scale, value = weight, unit = "kg"
+                    iconColor = Color.Blue,
+                    icon = Icons.Default.Scale,
+                    value = bmiViewModel.weight,
+                    unit = "kg"
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 InfoSection(
                     iconColor = Color.Green,
                     icon = Icons.Default.Height,
-                    value = height,
+                    value = bmiViewModel.height,
                     unit = "cm"
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 InfoSection(
                     iconColor = Color.Red,
                     icon = Icons.Default.PersonOutline,
-                    value = age,
+                    value = bmiViewModel.age,
                     unit = "years"
                 )
             }
-            HealthTipSection(healthTip)
+            HealthTipSection(bmiViewModel.healthTip)
             BmiScaleSection()
-            AppButton(onClick = {}, label = "Recalculate BMI")
+            AppButton(onClick = {
+                bmiViewModel.reset()
+                navController.popBackStack()
+
+            }, label = "Recalculate BMI")
         }
     }
 }
+
 
 @Composable
 fun BmiScaleSection() {
