@@ -125,20 +125,6 @@ fun BmiCalculationScreen(
     }
 }
 
-fun validate(weight: String, height: String, age: String): String {
-    if (weight.isBlank() || height.isBlank() || age.isBlank()) {
-        return "Please fill all the fields"
-    }
-    val weightValue = weight.toDouble()
-    val heightValue = height.toDouble()
-    val ageValue = age.toInt()
-    if (weightValue == null || weightValue <= 0) return "Please enter valid weight"
-    if (heightValue == null || heightValue <= 0) return "Please enter valid height"
-    if (ageValue == null || ageValue <= 0) return "Please enter valid age"
-    return ""
-
-}
-
 
 @Composable
 private fun GenderSelection(

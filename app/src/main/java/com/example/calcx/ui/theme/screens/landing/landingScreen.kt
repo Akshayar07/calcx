@@ -99,7 +99,7 @@ fun LandingScreen(navController: NavHostController) {
 @Composable
 fun BuildCard(title: String, modifier: Modifier, colorValue: Long, onClick: () -> Unit) {
     val titleTextStyle = TextStyle(
-        fontSize = 16.sp, fontWeight = FontWeight.Bold
+        fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color.Black
     )
     Card(
         onClick = onClick,
