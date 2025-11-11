@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.components
+package com.example.calcx.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.screens.bmi
+package com.example.calcx.ui.screens.bmi
 
 import AppButton
 import android.os.Build
@@ -41,7 +41,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.example.calcx.ui.theme.components.SectionTitle
+import com.example.calcx.ui.components.SectionTitle
 import com.example.calcx.viewmodel.BmiViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)

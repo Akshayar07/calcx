@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.components
+package com.example.calcx.ui.components
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

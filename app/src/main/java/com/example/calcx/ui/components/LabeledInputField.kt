@@ -1,12 +1,10 @@
-package com.example.calcx.ui.theme.components
+package com.example.calcx.ui.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.RocketLaunch
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -14,25 +12,35 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun LabeledInputField(
     value: String,
-    label: String,
+    label: String? = null,
+    placeholder: String? = null,
     onValueChange: (String) -> Unit,
-    errorMessage: String?
+    errorMessage: String? = null,
+    leadingIcon: ImageVector? = null,
+    trailingIcon: ImageVector? = null
 ) {
-
     Column(modifier = Modifier.fillMaxWidth()) {
         OutlinedTextField(
             isError = errorMessage != null,
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.RocketLaunch, contentDescription = "Kilogram"
-                )
-            },
+            leadingIcon = if (leadingIcon != null) {
+                {
+                    Icon(
+                        imageVector = leadingIcon, contentDescription = "Kilogram"
+                    )
+                }
+            } else null,
+            trailingIcon = if (trailingIcon != null) {
+                {
+                    Icon(imageVector = trailingIcon, contentDescription = "Clear")
+                }
+            } else null,
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Number
             ),
@@ -41,9 +49,19 @@ fun LabeledInputField(
             modifier = Modifier.fillMaxWidth(),
             value = value,
             onValueChange = onValueChange,
-            label = { Text(text = label) }
+            placeholder = if (placeholder != null) {
+                {
+                    Text(text = placeholder)
+                }
+            } else null,
+            label = if (label != null) {
+                {
+                    Text(text = label)
+                }
+            } else null
 
         )
+        // show error message if present
         if (errorMessage != null) {
             Text(
                 text = errorMessage,

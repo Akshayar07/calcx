@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.screens.landing
+package com.example.calcx.ui.screens.landing
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.calcx.ui.theme.navigation.Routes
+import com.example.calcx.navigation.Routes
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -84,8 +84,7 @@ fun LandingScreen(navController: NavHostController) {
                             modifier = Modifier.weight(1f),
                             colorValue = 0xFFE5D9F2,
                             onClick = {
-//                                navController.navigate(Routes.AGE)
-
+                                navController.navigate(Routes.DISCOUNT_CALCULATOR)
                             }
                         )
 

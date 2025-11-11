@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.screens.age
+package com.example.calcx.ui.screens.age
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -45,14 +45,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.calcx.ui.theme.navigation.Routes
+import com.example.calcx.navigation.Routes
 import com.example.calcx.utils.DateUtils
 import com.example.calcx.viewmodel.AgeViewModel
 import java.time.Instant
 import java.time.LocalDate
 import java.time.Period
 import java.time.ZoneId
-import java.time.format.DateTimeFormatter
 
 
 @RequiresApi(Build.VERSION_CODES.O)

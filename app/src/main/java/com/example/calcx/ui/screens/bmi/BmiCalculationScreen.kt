@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.screens.bmi
+package com.example.calcx.ui.screens.bmi
 
 import AppButton
 import android.widget.Toast
@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.RocketLaunch
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -27,10 +28,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.calcx.model.Gender
-import com.example.calcx.ui.theme.components.GenderOptionButton
-import com.example.calcx.ui.theme.components.LabeledInputField
-import com.example.calcx.ui.theme.components.SectionTitle
-import com.example.calcx.ui.theme.navigation.Routes
+import com.example.calcx.navigation.Routes
+import com.example.calcx.ui.components.GenderOptionButton
+import com.example.calcx.ui.components.LabeledInputField
+import com.example.calcx.ui.components.SectionTitle
 import com.example.calcx.viewmodel.BmiViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -82,10 +83,12 @@ fun BmiCalculationScreen(
                 modifier = Modifier.padding(top = 24.dp, bottom = 8.dp),
             )
             LabeledInputField(
-                errorMessage = bmiViewModel.weightError,
                 value = bmiViewModel.weight.toString(),
                 label = "Enter Your Weight",
-                onValueChange = { bmiViewModel.weight = it })
+                onValueChange = { bmiViewModel.weight = it },
+                errorMessage = bmiViewModel.weightError,
+                leadingIcon = Icons.Default.RocketLaunch,
+            )
             SectionTitle(
                 title = "Height (cm)",
                 modifier = Modifier.padding(top = 24.dp, bottom = 8.dp),
@@ -94,7 +97,8 @@ fun BmiCalculationScreen(
                 value = bmiViewModel.height,
                 label = "Enter Your Height",
                 onValueChange = { bmiViewModel.height = it },
-                errorMessage = bmiViewModel.heightError
+                errorMessage = bmiViewModel.heightError,
+                leadingIcon = Icons.Default.RocketLaunch,
             )
             SectionTitle(
                 title = "Age",
@@ -106,7 +110,8 @@ fun BmiCalculationScreen(
                 value = bmiViewModel.age,
                 label = "Enter Your Age",
                 onValueChange = { bmiViewModel.age = it },
-                errorMessage = bmiViewModel.ageError
+                errorMessage = bmiViewModel.ageError,
+                leadingIcon = Icons.Default.RocketLaunch,
             )
             Spacer(modifier = Modifier.height(24.dp))
             AppButton(

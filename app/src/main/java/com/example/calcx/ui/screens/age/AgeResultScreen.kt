@@ -1,4 +1,4 @@
-package com.example.calcx.ui.theme.screens.age
+package com.example.calcx.ui.screens.age
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -79,7 +79,8 @@ fun AgeResultScreen(navController: NavHostController, ageViewModel: AgeViewModel
             }
             Spacer(modifier = Modifier.height(30.dp))
             IconButton(
-                onClick = {navController.popBackStack() }, colors = IconButtonDefaults.iconButtonColors(
+                onClick = { navController.popBackStack() },
+                colors = IconButtonDefaults.iconButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary
                 )

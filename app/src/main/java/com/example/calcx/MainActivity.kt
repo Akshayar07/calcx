@@ -8,8 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
+import com.example.calcx.navigation.AppNavHost
 import com.example.calcx.ui.theme.CalcxTheme
-import com.example.calcx.ui.theme.navigation.AppNavHost
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
