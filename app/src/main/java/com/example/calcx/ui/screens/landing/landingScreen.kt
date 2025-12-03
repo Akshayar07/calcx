@@ -89,7 +89,21 @@ fun LandingScreen(navController: NavHostController) {
                         )
 
                     }
+
                 }
+            }
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier.height(200.dp)
+            ) {
+                BuildCard(
+                    title = "Weather",
+                    modifier = Modifier.weight(1f),
+                    colorValue = 0xFFBFF6C3,
+                    onClick = {
+                        navController.navigate(Routes.WEATHER)
+                    }
+                )
             }
         }
     }
