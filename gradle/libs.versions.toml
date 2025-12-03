@@ -11,6 +11,9 @@ composeBom = "2025.10.01"
 material3 = "1.4.0"
 materialIconsExtended = "1.7.8"
 navigationCompose = "2.9.5"
+supportAnnotations = "28.0.0"
+annotation = "1.9.1"
+supportV4 = "28.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +33,9 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+support-annotations = { group = "com.android.support", name = "support-annotations", version.ref = "supportAnnotations" }
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+support-v4 = { group = "com.android.support", name = "support-v4", version.ref = "supportV4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
